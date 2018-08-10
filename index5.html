@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <!-- OP EDIT -->
+    <title>HIV/Ab</title>
+   <link rel="icon" type="image/png" href="../HIV_AB_CoEvo/img/HIV.png" sizes="32x32">
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -19,17 +21,65 @@
 
 </head>
 
+    <!-- OP EDIT -->
+
+<style>
+.logo {
+  background-color: white;
+  border: 1px lightgrey solid;
+  border-radius: 25px;
+  padding: 0%;
+  max-width:100%
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img {
+  max-width:100%
+}
+
+ul {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+.small-logo{
+    opacity: 1;
+    float: left;
+    width: 34px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+</style>
+
 <body>
 
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+
+                <a href="#">
+                    <div class="small-logo">
+                        <img src="../HIV_AB_CoEvo/img/HIV.png">
+                    </div>
+                </a>
+                <h3>HIV/Ab EVO</h3>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
+                <p>Data</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -46,33 +96,48 @@
                 </li>
                 <li>
                     <a href="#">About</a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ab Diversity</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">Patient 1</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="#">Patient 2</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">Patient 3</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 4</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 6</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 7</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 8</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 9</a>
+                        </li>
+                        <li>
+                            <a href="#">Patient 10</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                    <a href="#" class="download">Github</a>
                 </li>
                 <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                    <a href="#" class="article">Back to article</a>
                 </li>
             </ul>
         </nav>
@@ -95,41 +160,49 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">People</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Publications</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
+
+
                         </ul>
                     </div>
                 </div>
             </nav>
             
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <!--
+        Inserting front page logo/css code added above
+    -->
+      <div class="logo">
+            <img src="../HIV_AB_CoEvo/img/HIV_front_biglogo4.svg" class="center" >
+          </div>
+
 
             <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <h2>Our Dataset</h2>
+            <p>
+                <ul>
+                <li>10 patients</li>
+                <li>Sequenced the C2/V3 region of the HIV env gene</li>
+                <li>Sequenced the variable region of the heavy chain antibody (Ab) locus of B cells</li>
+                </ul>
+            </p>
 
             <div class="line"></div>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Rationale and Motivation</h2>
+            <p>It is well known that B-cells (a type of immune cell) will mutate their antibodies and undergo selection events in order to better bind their pathogenic targets. This process is essentially identical to Darwinian selection. Which means that every time you get sick, your adaptive immune system is literally evolving in order to better fight the infection, and provide you with immunity in the future! With respect to HIV infections, it has been shown that antibodies that are particularly good at binding and neutralizing HIV, have undergone extensive evolution. Further, it is well documented that HIV is also continuously evolving in order to evade the surveillance of antibodies. This suggests that antibodies and HIV are undergoing a coevolutionary process! Whereby, an antibody will evolve to better bind its HIV target, then HIV will evolve to avoid that antibody, then the antibody will evolve a counter-adaptation, and the process will continuously repeat. It is likely that this coevolutionary process is important for the development of antibodies that are particularly effective at neutralizing HIV. However, very little is known about it, and it has rarely been directly observed. Thus, we sought to illuminate the evolutionary interaction between HIV and antibodies over time by sequencing both the population of antibodies, and the population of HIV in human individuals over the course of their infection.</p>
 
             <div class="line"></div>
 
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
         </div>
+
+
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
