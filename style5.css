@@ -188,6 +188,23 @@ a.article, a.article:hover {
     margin: 5px auto;
 }
 
+#photo {
+    padding-right: 5px;
+}
+
+#pic_div {
+    width: 100%;
+    padding: 20px;
+    min-height: 50vh;
+}
+
+#peeps {
+    padding: 10px;
+}
+
+#logo {
+    padding: 5px;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
