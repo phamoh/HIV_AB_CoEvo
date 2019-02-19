@@ -12,9 +12,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 		var allPatientIDs = unpack(rows, 'patient_id'),
 			allTimePoints = unpack(rows, 'time_point'),
 			allABDPi = unpack(rows, 'ab_diversity_pi'),
+			allHIV_div = unpack(rows, 'hiv_diversity_pi'),
 			listofPatients = [],
+			listofDataViz = ["Antibody Diversity", "HIV Diversity"],
 			currentPatient,
 			currentABDPi = [],
+			currentHIVPi = [],
 			currentTimePoint = [];
 
 		//This affects the dropdown menu
@@ -24,41 +27,62 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 			}
 		}
 
+
 		//This function gets the data from the patient chosen on the dropdown
-		function getPatientData(chosenPatient) {
+		function getPatientData(chosenPatient, chosenData) {
 			currentABDPi = [];
 			currentTimePoint = [];
 			for (var i = 0; i < allPatientIDs.length; i++) {
-				if (allPatientIDs[i] === chosenPatient) {
+				if (allPatientIDs[i] === chosenPatient && chosenData === "Antibody Diversity") {
 					currentABDPi.push(allABDPi[i]);
+					currentTimePoint.push(allTimePoints[i]);
+				}
+				else if (allPatientIDs[i] === chosenPatient && chosenData === "HIV Diversity") {
+					currentHIVPi.push(allHIV_div[i]);
 					currentTimePoint.push(allTimePoints[i]);
 				}
 			}
 		};
 
 		// Default Patient 1 Data
-		setBubblePlot('1');
+		setBubblePlot('1', 'Antibody Diversity');
 
 		//
-		function setBubblePlot(chosenPatient) {
-			getPatientData(chosenPatient);
+		function setBubblePlot(chosenPatient, chosenData) {
+			getPatientData(chosenPatient, chosenData);
+			if (chosenData === "Antibody Diversity") {
+				var trace1 = {
+					x: currentTimePoint,
+					y: currentABDPi,
+					mode: 'lines+markers',
+					type: 'scatter',
+					connectgaps: true,
+					marker: {
+						size: 12,
+						opacity: 0.5
+					}
+				}
+			}
+			else if(chosenData === "HIV Diversity"){
+				var trace1 = {
+					x: currentTimePoint,
+					y: currentHIVPi,
+					mode: 'lines+markers',
+					type: 'scatter',
+					connectgaps: true,
+					marker: {
+						size: 12,
+						opacity: 0.5
+					}
+				}
+			}
+		
 
-			var trace1 = {
-				x: currentTimePoint,
-				y: currentABDPi,
-				mode: 'lines+markers',
-				type: 'scatter',
-				connectgaps: true,
-				marker: {
-					size: 12,
-					opacity: 0.5
-				},
-			};
 
 			//This function is for the layout of the plot
 			var data = [trace1];
 			var layout = {
-				title: 'AbR Diversity of Patient ' + chosenPatient,
+				title: chosenData + ' of Patient ' + chosenPatient,
 				titlefont: {
 					family: 'Poppins, sans-serif',
 				},
@@ -81,9 +105,11 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 			Plotly.newPlot('plotdiv', data, layout, { showSendToCloud: true, responsive: true });
 		};
 
-		var innerContainer = document.querySelector('[data-num="0"'),
-			plotEl = innerContainer.querySelector('.plot'),
-			patientSelector = innerContainer.querySelector('.patientdata');
+		// This code populates the info to the plots and the dropdowns.
+		var innerContainer = document.querySelector('[data-num="0"]'),
+			//plotEl = innerContainer.querySelector('.plot'),
+			patientSelector = innerContainer.querySelector('.patientnumber');
+			dataSelector = innerContainer.querySelector('.datatype');
 
 		function assignOptions(textArray, selector) {
 			for (var i = 0; i < textArray.length; i++) {
@@ -94,10 +120,17 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 		}
 
 		assignOptions(listofPatients, patientSelector);
+		assignOptions(listofDataViz, dataSelector);
+		
+		console.log(listofPatients);
+		console.log(dataSelector.value);
+
+
 
 		function updatePatient() {
-			setBubblePlot(patientSelector.value);
+			setBubblePlot(patientSelector.value, dataSelector.value);
 		}
 
 		patientSelector.addEventListener('change', updatePatient, false);
+		dataSelector.addEventListener('change', updatePatient, false);
 	});
