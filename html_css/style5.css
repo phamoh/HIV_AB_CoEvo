@@ -239,3 +239,53 @@ a.article, a.article:hover {
     }
 
 }
+
+.logo {
+  background-color: white;
+  border: 1px lightgrey solid;
+  border-radius: 25px;
+  padding: 0%;
+  max-width:100%
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img {
+  max-width:100%
+}
+
+ul {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+.small-logo{
+    opacity: 1;
+    float: left;
+    width: 34px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+circle.dimple-series-1 {
+fill: #33ccff;
+}
+
+h2 {
+text-align: center;
+}
+
+.line {
+fill: none;
+stroke: #EF5285;
+stroke-width: 2px;
+}
+

@@ -62,9 +62,10 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 						opacity: 0.5
 					}
 				}
+				var data = [trace1];
 			}
 			else if(chosenData === "HIV Diversity"){
-				var trace1 = {
+				var trace2 = {
 					x: currentTimePoint,
 					y: currentHIVPi,
 					mode: 'lines+markers',
@@ -75,12 +76,13 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 						opacity: 0.5
 					}
 				}
+				var data = [trace2];
 			}
 		
 
 
 			//This function is for the layout of the plot
-			var data = [trace1];
+			//var data = [trace1];
 			var layout = {
 				title: chosenData + ' of Patient ' + chosenPatient,
 				titlefont: {
