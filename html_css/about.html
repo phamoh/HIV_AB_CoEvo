@@ -26,13 +26,17 @@
 
 </head>
 
+<!-- OP EDIT -->
+
+
+
 <body>
 
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="data_viz_plotly.html">
+                <a href="#">
                     <div class="small-logo">
                         <img src="../logos/favicon.png">
                     </div>
@@ -43,6 +47,7 @@
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="index5.html">Home</a>
+                </li>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
@@ -61,8 +66,9 @@
                         Diversity</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Patient Data</a>
+                            <a href="#">Patient 1</a>
                         </li>
+
                     </ul>
                 </li>
             </ul>
@@ -93,76 +99,60 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="people.html">People</a>
+                                <a class="nav-link" href="People.html">People</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Publications">Publications</a>
+                                <a class="nav-link" href="#">Publications</a>
                             </li>
+
+
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <h2>People</h2>
+        <!--
+        Inserting front page logo/css code added above
+        -->
+            <h2>Overview</h2>
 
             <hr>
 
-            <div id="peeps" class="row">
-                <div class="col-sm-9">
-                    <h4>Nicolas Strauli</h4>
-                    <p>Nicolas is a graduate student in the Hernandez Lab at UC San Francisco. Early in his graduate
-                        career he learned that B-cells (a type of immune cell) will actually mutate their genomes--and
-                        undergo a process analogous to evolution by natural selection--in order to generate antibodies
-                        that will better bind to pathogens. He has been obsessed with this process ever since. He is
-                        also more generally interested in systems where one can observe evolution in real-time,
-                        developing statistical methods for time-series datasets, and the quest for an HIV vaccine.</p>
-                    <a href="mailto: Nicolas.Strauli@ucsf.edu"><img id="logo" src="../Images/email.png"></a>
-                    <a href=""><img id="logo" src="../Images/Githublogo.png"></a>
-                    <a href=""><img id="logo" src="../Images/Inlogo.png"></a>
-                </div>
-                <div id="pic_div" class="col-sm-3">
-                    <img id="photo" src="../Images/nicolas_in_shark.jpg" class="img-fluid rounded float-left" alt="...">
-                </div>
-            </div>
+            <h4>Our Dataset</h4>
+            <p>
+                <ul>
+                    <li>10 patients</li>
+                    <li>Sequenced the C2/V3 region of the HIV env gene</li>
+                    <li>Sequenced the variable region of the heavy chain antibody (Ab) locus of B cells</li>
+                </ul>
+            </p>
 
             <hr>
 
-            <div id="peeps" class="row">
-                <div class="col-sm-9">
-                    <h4>Emily Fryer</h4>
-                    <p>Emily is finishing up her B.S. in Ecology at San Francisco State University. She is currently a
-                        member of the Dr. Pleuni Penning's CODE lab researching the fitness costs of HIV drug resistance
-                        mutations. She loves plants, being outdoors and gaining a better understanding polyploidy in
-                        plant evolotion.</p>
-                    <a href="mailto: efryer333@gmail.com"><img id="logo" src="../Images/email.png"></a>
-                    <a href=""><img id="logo" src="../Images/Githublogo.png"></a>
-                    <a href=""><img id="logo" src="../Images/Inlogo.png"></a>
-                </div>
-                <div id="pic_div" class="col-sm-3">
-                    <img id="photo" src="../Images/Emily2.png" class="img-fluid rounded float-left" alt="...">
-                </div>
-            </div>
+            <h4>Rationale and Motivation</h4>
+            <p>It is well known that B-cells (a type of immune cell) will mutate their antibodies and undergo selection
+                events in order to better bind their pathogenic targets. This process is essentially identical to
+                Darwinian selection. Which means that every time you get sick, your adaptive immune system is literally
+                evolving in order to better fight the infection, and provide you with immunity in the future! With
+                respect to HIV infections, it has been shown that antibodies that are particularly good at binding and
+                neutralizing HIV, have undergone extensive evolution. Further, it is well documented that HIV is also
+                continuously evolving in order to evade the surveillance of antibodies. This suggests that antibodies
+                and HIV are undergoing a coevolutionary process! Whereby, an antibody will evolve to better bind its HIV
+                target, then HIV will evolve to avoid that antibody, then the antibody will evolve a counter-adaptation,
+                and the process will continuously repeat. It is likely that this coevolutionary process is important for
+                the development of antibodies that are particularly effective at neutralizing HIV. However, very little
+                is known about it, and it has rarely been directly observed. Thus, we sought to illuminate the
+                evolutionary interaction between HIV and antibodies over time by sequencing both the population of
+                antibodies, and the population of HIV in human individuals over the course of their infection.
+                </p>
 
-            <hr>
 
-            <div id="peeps" class="row">
-                <div class="col-sm-9">
-                    <h4>Olivia Pham</h4>
-                    <p>Olivia is Cellular and Molecular Biology Master's student at San Francisco State University. I
-                        think she used to be a cat in a past life.</p>
-                    <a href="mailto: phamorrific@gmail.com"><img id="logo" src="../Images/email.png"></a>
-                    <a href=""><img id="logo" src="../Images/Githublogo.png"></a>
-                    <a href=""><img id="logo" src="../Images/Inlogo.png"></a>
-                </div>
-                <div id="pic_div" class="col-sm-3">
-                    <img id="photo" src="../Images/Olivia2.jpeg" class="img-fluid rounded float-left" alt="...">
-                </div>
-            </div>
         </div>
+
+
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
