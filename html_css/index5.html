@@ -49,7 +49,8 @@
                     <a href="index5.html">Home</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">About</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="about.html">Overview</a>
@@ -117,17 +118,39 @@
             <div class="logo">
                 <img src="../logos/main_logo.svg" class="center">
             </div>
-            
+
             <hr>
 
             <h3>Explore the HIV and the Antibody Repertoire</h3>
 
+            <div class="showcase__section" id="bubble">
+                <div class="spacer --small"></div>
+                <div id="bubbleplots">
+                    <div class="bubbleplot" data-num="0">
+                        <div class="dropdown-plot">
+                            Patient: <select class="patientnumber">
+                            </select>
+                            <button onclick="setBubblePlot(chosenPatient, chosenData)">HIV Diversity</button>
+                            <br><br>
 
+                        </div>
+                        <div class="dropdown-plot">
+                            <select class="datatype">
+                            </select>
+                            <br><br>
+                        </div>
+                        <div class="plot" id="plotdiv"></div>
 
-
-
-
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+
+
+
+    </div>
 
 
     </div>
@@ -153,6 +176,8 @@
             });
         });
     </script>
+
+    <script src="../js/ef.js"></script>
 </body>
 
 </html>
