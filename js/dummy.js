@@ -9,17 +9,35 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 			});
 		}
 
+		var allPatientIDs = unpack(rows, 'patient_id'),
+			allTimePoints = unpack(rows, 'time_point'),
+			allABDPi = unpack(rows, 'ab_diversity_pi'),
+			allHIV_div = unpack(rows, 'hiv_diversity_pi'),
+			listofPatients = [],
+			listofDataViz = ["Antibody Diversity", "HIV Diversity"],
+			currentPatient,
+			currentABDPi = [],
+			currentHIVPi = [],
+			currentTimePoint = [];
+
+		//This affects the dropdown menu
+		for (var i = 0; i < allPatientIDs.length; i++) {
+			if (listofPatients.indexOf(allPatientIDs[i]) === -1) {
+				listofPatients.push(allPatientIDs[i]);
+			}
+		}
+
+
 		var data = [{
 			type: 'scatter',
 			mode: 'lines+markers',
-			x: unpack(rows, 'time_point'),
-			y: unpack(rows, 'ab_diversity_pi'),
+			x: allTimePoints,
+			y: allABDPi,
 			connectgaps: true,
-			text: unpack(rows, 'patient_id'),
+			text: allPatientIDs,
 			transforms: [{
 				type: 'groupby',
-				groups: unpack(rows, 'patient_id'),
-
+				groups: allPatientIDs,
 			}]
 		}]
 		var layout = {
