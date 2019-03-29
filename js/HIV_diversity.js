@@ -16,7 +16,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             listofPatients = [],
             currentPatient,
             currentABDPi = [],
-            currentHIVPi = [],
+            currentHIVDPi = [],
             currentTimePoint = [];
 
         //This affects the dropdown menu
@@ -30,19 +30,19 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         var trace1 = [];
 
         function getPatientData(chosenPatient) {
-            currentABDPi = [];
+            currentHIVDPi = [];
             currentTimePoint = [];
             trace1 = [];
             for (var i = 0; i < allPatientIDs.length; i++) {
                 switch (chosenPatient) {
                     case "1":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -57,12 +57,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                         break;
                     case "2":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -78,12 +78,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "3":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -98,12 +98,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                         break;
                     case "4":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -119,12 +119,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "5":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -140,12 +140,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "6":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -161,12 +161,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "7":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -182,12 +182,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "8":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -199,17 +199,16 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                                 opacity: 0.5
                             },
                         }
-
                         break;
 
                     case "9":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -225,12 +224,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
                     case "10":
                         if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
+                            currentHIVDPi.push(allHIV_div[i]);
                             currentTimePoint.push(allTimePoints[i]);
                         }
                         trace1 = {
                             x: currentTimePoint,
-                            y: currentABDPi,
+                            y: currentHIVDPi,
                             mode: 'lines+markers',
                             type: 'scatter',
                             connectgaps: true,
@@ -263,15 +262,17 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         };
 
 
-        setBubblePlot("1");
+        // Default Patient 1 Data
+        setBubblePlot('1');
 
+        //
         function setBubblePlot(chosenPatient) {
             getPatientData(chosenPatient);
 
             var data = [trace1];
 
             var layout = {
-                title: 'AbR Diversity of Patient ' + chosenPatient,
+                title: 'HIV Diversity of Patient ' + chosenPatient,
                 titlefont: {
                     family: 'Poppins, sans-serif',
                 },
@@ -287,15 +288,14 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                         family: 'Poppins, sans-serif',
                     },
                 }
+
             };
 
-            Plotly.restyle('plotdiv_2', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv_1', data, layout, { showSendToCloud: true, responsive: true });
         };
 
-
-        // This code populates the info to the plots and the dropdowns.
-        var innerContainer = document.querySelector('[data-num="0"]'),
-            plotEl = innerContainer.querySelector('.plot2'),
+        var innerContainer = document.querySelector('[data-num="0"'),
+            plotEl = innerContainer.querySelector('.plot1'),
             patientSelector = innerContainer.querySelector('.patientdata');
 
         function assignOptions(textArray, selector) {
@@ -304,7 +304,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 currentOption.text = textArray[i];
                 selector.appendChild(currentOption);
             }
-        };
+        }
 
         assignOptions(listofPatients, patientSelector);
 
@@ -313,5 +313,4 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
 
         patientSelector.addEventListener('change', updatePatient, false);
-
     });

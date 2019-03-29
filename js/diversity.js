@@ -27,6 +27,28 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
         listofPatients.push("All Patients")
 
+        console.log(allPatientIDs);
+        console.log(listofPatients[0]);
+        console.log(listofPatients[10]);
+
+
+
+        //This function gets the data from the patient chosen on the dropdown (original function)
+        /*
+                        function getPatientData(chosenPatient) {
+                            currentABDPi = [];
+                            currentTimePoint = [];
+                            for (var i = 0; i < allPatientIDs.length; i++) {
+                                if (allPatientIDs[i] === chosenPatient) {
+                                    currentABDPi.push(allABDPi[i]);
+                                    currentTimePoint.push(allTimePoints[i]);
+                                }
+                            }
+                        };
+            
+                */
+
+
         var trace1 = [];
 
         function getPatientData(chosenPatient) {
@@ -289,13 +311,13 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 }
             };
 
-            Plotly.restyle('plotdiv_2', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv', data, layout, { showSendToCloud: true, responsive: true });
         };
 
 
         // This code populates the info to the plots and the dropdowns.
         var innerContainer = document.querySelector('[data-num="0"]'),
-            plotEl = innerContainer.querySelector('.plot2'),
+            plotEl = innerContainer.querySelector('.plot'),
             patientSelector = innerContainer.querySelector('.patientdata');
 
         function assignOptions(textArray, selector) {
