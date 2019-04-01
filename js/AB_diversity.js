@@ -12,11 +12,9 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         var allPatientIDs = unpack(rows, 'patient_id'),
             allTimePoints = unpack(rows, 'time_point'),
             allABDPi = unpack(rows, 'ab_diversity_pi'),
-            allHIV_div = unpack(rows, 'hiv_diversity_pi'),
             listofPatients = [],
             currentPatient,
             currentABDPi = [],
-            currentHIVPi = [],
             currentTimePoint = [];
 
         //This affects the dropdown menu
@@ -27,6 +25,28 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
         listofPatients.push("All Patients")
 
+        console.log(allPatientIDs);
+        console.log(listofPatients[0]);
+        console.log(listofPatients[10]);
+
+
+
+        //This function gets the data from the patient chosen on the dropdown (original function)
+        /*
+                        function getPatientData(chosenPatient) {
+                            currentABDPi = [];
+                            currentTimePoint = [];
+                            for (var i = 0; i < allPatientIDs.length; i++) {
+                                if (allPatientIDs[i] === chosenPatient) {
+                                    currentABDPi.push(allABDPi[i]);
+                                    currentTimePoint.push(allTimePoints[i]);
+                                }
+                            }
+                        };
+            
+                */
+
+
         var trace1 = [];
 
         function getPatientData(chosenPatient) {
@@ -34,232 +54,40 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             currentTimePoint = [];
             trace1 = [];
             for (var i = 0; i < allPatientIDs.length; i++) {
-                switch (chosenPatient) {
-                    case "1":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-                    case "2":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
+                if (chosenPatient === 'All Patients') {
+                    trace1 = {
+                        type: 'scatter',
+                        mode: 'lines+markers',
+                        x: allTimePoints,
+                        y: allABDPi,
+                        connectgaps: true,
+                        text: allPatientIDs,
+                        transforms: [{
+                            type: 'groupby',
+                            groups: allPatientIDs,
+                        }]
+                    }
+                } else if (allPatientIDs[i] === chosenPatient) {
+                    currentABDPi.push(allABDPi[i]);
+                    currentTimePoint.push(allTimePoints[i]);
 
-                    case "3":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-                    case "4":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "5":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "6":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "7":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "8":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-
-                        break;
-
-                    case "9":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "10":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentABDPi.push(allABDPi[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentABDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "All Patients":
-                        trace1 = {
-                            type: 'scatter',
-                            mode: 'lines+markers',
-                            x: allTimePoints,
-                            y: allABDPi,
-                            connectgaps: true,
-                            text: allPatientIDs,
-                            transforms: [{
-                                type: 'groupby',
-                                groups: allPatientIDs,
-                            }]
-                        }
-                        break;
+                    trace1 = {
+                        x: currentTimePoint,
+                        y: currentABDPi,
+                        mode: 'lines+markers',
+                        type: 'scatter',
+                        connectgaps: true,
+                        line: {
+                            color: 'rgb(255,127,80)',
+                        },
+                        marker: {
+                            size: 12,
+                            opacity: 0.5
+                        },
+                    }
                 }
             }
+
         };
 
 
@@ -289,14 +117,15 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 }
             };
 
-            Plotly.restyle('plotdiv_2', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv2', data, layout, { showSendToCloud: true, responsive: true });
         };
 
 
         // This code populates the info to the plots and the dropdowns.
-        var innerContainer = document.querySelector('[data-num="0"]'),
-            plotEl = innerContainer.querySelector('.plot2'),
-            patientSelector = innerContainer.querySelector('.patientdata');
+        var innerContainer = document.querySelector('[data-num2="0"]'),
+            //plotEl = innerContainer.querySelector('.plot'),
+            patientSelector = innerContainer.querySelector('.patientdata2');
+
 
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {

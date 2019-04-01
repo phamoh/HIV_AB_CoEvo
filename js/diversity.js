@@ -125,8 +125,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
         // This code populates the info to the plots and the dropdowns.
         var innerContainer = document.querySelector('[data-num="0"]'),
-            plotEl = innerContainer.querySelector('.plot'),
-            patientSelector = innerContainer.querySelector('.patientdata');
+            //plotEl = innerContainer.querySelector('.plot'),
+            patientSelector = innerContainer.querySelector('.patientdata1');
 
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {

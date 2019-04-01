@@ -364,5 +364,24 @@ h2 {
 
 
 /* ---------------------------------------------------
-    Tabs
+    Data Table
 ----------------------------------------------------- */
+
+table {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.6em;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    height: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

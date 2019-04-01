@@ -102,12 +102,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
             };
 
-            Plotly.newPlot('plotdiv_3', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv3', data, layout, { showSendToCloud: true, responsive: true });
         };
 
-        var innerContainer = document.querySelector('[data-num="0"'),
+        var innerContainer = document.querySelector('[data-num3="0"'),
             plotEl = innerContainer.querySelector('.plot'),
-            patientSelector = innerContainer.querySelector('.patientdata');
+            patientSelector = innerContainer.querySelector('.patientdata3');
 
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {

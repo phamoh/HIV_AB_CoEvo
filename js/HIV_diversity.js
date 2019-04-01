@@ -16,7 +16,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             listofPatients = [],
             currentPatient,
             currentABDPi = [],
-            currentHIVDPi = [],
+            currentHIVPi = [],
             currentTimePoint = [];
 
         //This affects the dropdown menu
@@ -27,245 +27,58 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
         listofPatients.push("All Patients")
 
+        console.log(allPatientIDs);
+        console.log(listofPatients[0]);
+        console.log(listofPatients[10]);
+
+
+
         var trace1 = [];
 
         function getPatientData(chosenPatient) {
-            currentHIVDPi = [];
+            currentHIVPi = [];
             currentTimePoint = [];
             trace1 = [];
             for (var i = 0; i < allPatientIDs.length; i++) {
-                switch (chosenPatient) {
-                    case "1":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-                    case "2":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
+                if (chosenPatient === 'All Patients') {
+                    trace1 = {
+                        type: 'scatter',
+                        mode: 'lines+markers',
+                        x: allTimePoints,
+                        y: allHIV_div,
+                        connectgaps: true,
+                        text: allPatientIDs,
+                        transforms: [{
+                            type: 'groupby',
+                            groups: allPatientIDs,
+                        }]
+                    }
+                } else if (allPatientIDs[i] === chosenPatient) {
+                    currentHIVPi.push(allHIV_div[i]);
+                    currentTimePoint.push(allTimePoints[i]);
 
-                    case "3":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-                    case "4":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "5":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "6":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "7":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "8":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "9":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "10":
-                        if (allPatientIDs[i] === chosenPatient) {
-                            currentHIVDPi.push(allHIV_div[i]);
-                            currentTimePoint.push(allTimePoints[i]);
-                        }
-                        trace1 = {
-                            x: currentTimePoint,
-                            y: currentHIVDPi,
-                            mode: 'lines+markers',
-                            type: 'scatter',
-                            connectgaps: true,
-                            line: {
-                                color: 'rgb(255,127,80)',
-                            },
-                            marker: {
-                                size: 12,
-                                opacity: 0.5
-                            },
-                        }
-                        break;
-
-                    case "All Patients":
-                        trace1 = {
-                            type: 'scatter',
-                            mode: 'lines+markers',
-                            x: allTimePoints,
-                            y: allABDPi,
-                            connectgaps: true,
-                            text: allPatientIDs,
-                            transforms: [{
-                                type: 'groupby',
-                                groups: allPatientIDs,
-                            }]
-                        }
-                        break;
+                    trace1 = {
+                        x: currentTimePoint,
+                        y: currentHIVPi,
+                        mode: 'lines+markers',
+                        type: 'scatter',
+                        connectgaps: true,
+                        line: {
+                            color: 'rgb(142, 124, 195)',
+                        },
+                        marker: {
+                            size: 12,
+                            opacity: 0.5
+                        },
+                    }
                 }
             }
+
         };
 
 
-        // Default Patient 1 Data
-        setBubblePlot('1');
+        setBubblePlot("1");
 
-        //
         function setBubblePlot(chosenPatient) {
             getPatientData(chosenPatient);
 
@@ -288,15 +101,16 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                         family: 'Poppins, sans-serif',
                     },
                 }
-
             };
 
-            Plotly.newPlot('plotdiv_1', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv', data, layout, { showSendToCloud: true, responsive: true });
         };
 
-        var innerContainer = document.querySelector('[data-num="0"'),
-            plotEl = innerContainer.querySelector('.plot'),
-            patientSelector = innerContainer.querySelector('.patientdata');
+
+        // This code populates the info to the plots and the dropdowns.
+        var innerContainer = document.querySelector('[data-num="0"]'),
+            //plotEl = innerContainer.querySelector('.plot'),
+            patientSelector = innerContainer.querySelector('.patientdata1');
 
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {
@@ -304,7 +118,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 currentOption.text = textArray[i];
                 selector.appendChild(currentOption);
             }
-        }
+        };
 
         assignOptions(listofPatients, patientSelector);
 
@@ -313,4 +127,5 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
 
         patientSelector.addEventListener('change', updatePatient, false);
+
     });
