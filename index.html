@@ -125,6 +125,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Selection" role="tab" aria-controls="Selection" aria-selected="false"> Selection <span class="caret"></span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Abundance" role="tab" aria-controls="Abundance" aria-selected="false"> Abundance <span class="caret"></span></a>
+                </li>
             </ul>
 
 
@@ -294,51 +297,94 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="tab-pane fade" id="Abundance" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openStatistic(event, 'CD4count')" id="defaultOpen">CD4 T cell count</button>
+                        <button class="tablinks" onclick="openStatistic(event, 'viral_load')">Viral Load</button>
+                    </div>
+
+                    <div id="CD4count" class="tabcontent">
+                        <br>
+                        <h3>CD4 T cell count</h3>
+                        <p>Measures the concentration of HIV virions in the peripheral blood of a sample.
+                        </p>
+                        <div class="showcase__section" id="bubble">
+                            <div class="spacer --small"></div>
+                            <div id="bubbleplots">
+                                <div class="bubbleplot" data-num="0">
+                                    <div class="dropdown-plot">
+                                        Patient: <select class="patientdata"></select>
+                                    </div>
+                                    <div class="plot" id="plotdiv_7"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="viral_load" class="tabcontent">
+                        <br>
+                        <h3>Viral Load</h3>
+                        <p>Measures the number of CD4 positive T cells in the peripheral blood of a sample.</p>
+                        <div class=" showcase__section " id="bubble ">
+                            <div class="spacer --small "></div>
+                            <div id="bubbleplots ">
+                                <div class="bubbleplot " data-num="0 ">
+                                    <div class="dropdown-plot ">
+                                        Patient: <select class="patientdata "></select>
+                                    </div>
+                                    <div class="plot " id="plotdiv_8"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                 </div>
 
-            </div>
 
+                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+                <!-- Popper.JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js " integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ " crossorigin="anonymous "></script>
+                <!-- Bootstrap JS -->
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js " integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm " crossorigin="anonymous "></script>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
-            <!-- Popper.JS -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js " integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ " crossorigin="anonymous "></script>
-            <!-- Bootstrap JS -->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js " integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm " crossorigin="anonymous "></script>
-
-            <script type="text/javascript ">
-                $(document).ready(function() {
-                    $('#sidebarCollapse').on('click', function() {
-                        $('#sidebar').toggleClass('active');
-                        $(this).toggleClass('active');
+                <script type="text/javascript ">
+                    $(document).ready(function() {
+                        $('#sidebarCollapse').on('click', function() {
+                            $('#sidebar').toggleClass('active');
+                            $(this).toggleClass('active');
+                        });
                     });
-                });
-            </script>
+                </script>
 
-            <!-- JS for Statistic description -->
-            <script>
-                function openStatistic(evt, statName) {
-                    var i, tabcontent, tablinks;
-                    tabcontent = document.getElementsByClassName("tabcontent ");
-                    for (i = 0; i < tabcontent.length; i++) {
-                        tabcontent[i].style.display = "none ";
+                <!-- JS for Statistic description -->
+                <script>
+                    function openStatistic(evt, statName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent ");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none ";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks ");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active ", " ");
+                        }
+                        document.getElementById(statName).style.display = "block ";
+                        evt.currentTarget.className += " active ";
                     }
-                    tablinks = document.getElementsByClassName("tablinks ");
-                    for (i = 0; i < tablinks.length; i++) {
-                        tablinks[i].className = tablinks[i].className.replace(" active ", " ");
-                    }
-                    document.getElementById(statName).style.display = "block ";
-                    evt.currentTarget.className += " active ";
-                }
-            </script>
+                </script>
 
-            <script>
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("defaultOpen").click();
-            </script>
+                <script>
+                    // Get the element with id="defaultOpen" and click on it
+                    document.getElementById("defaultOpen").click();
+                </script>
 
-            <script src="js/diversity.js"></script>
+                <script src="js/diversity.js"></script>
 
 
 
