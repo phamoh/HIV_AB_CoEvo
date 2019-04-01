@@ -103,12 +103,12 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 }
             };
 
-            Plotly.newPlot('plotdiv', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv1', data, layout, { showSendToCloud: true, responsive: true });
         };
 
 
         // This code populates the info to the plots and the dropdowns.
-        var innerContainer = document.querySelector('[data-num="0"]'),
+        var innerContainer = document.querySelector('[data-num1="0"]'),
             //plotEl = innerContainer.querySelector('.plot'),
             patientSelector = innerContainer.querySelector('.patientdata1');
 
