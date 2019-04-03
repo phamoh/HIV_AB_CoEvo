@@ -28,11 +28,9 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         for (var i = 0; i < allPatientIDs.length; i++) {
             if (listofPatients.indexOf(allPatientIDs[i]) === -1) {
                 listofPatients.push(allPatientIDs[i]);
-            } else if (listofPatientsAll.indexOf(allPatientIDs[i]) === -1) {
-                listofPatientsAll.push(allPatientIDs[i]);
             }
         }
-        listofPatientsAll.push("All Patients");
+        listofPatients.push("All Patients");
 
 
         function assignOptions(textArray, selector) {
@@ -45,10 +43,10 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
         // This code populates the info to the plots and the dropdowns.
         var innerContainer1 = document.querySelector('[data-num1="0"]'),
-            innerContainer2 = document.querySelector('[data-num2="0"]'),
-            innerContainer3 = document.querySelector('[data-num3="0"]'),
             patientSelector1 = innerContainer1.querySelector('.patientdata1'),
+            innerContainer2 = document.querySelector('[data-num2="0"]'),
             patientSelector2 = innerContainer2.querySelector('.patientdata2'),
+            innerContainer3 = document.querySelector('[data-num3="0"]'),
             patientSelector3 = innerContainer3.querySelector('.patientdata3');
 
 
