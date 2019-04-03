@@ -28,9 +28,11 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         for (var i = 0; i < allPatientIDs.length; i++) {
             if (listofPatients.indexOf(allPatientIDs[i]) === -1) {
                 listofPatients.push(allPatientIDs[i]);
+            } else if (listofPatientsAll.indexOf(allPatientIDs[i]) === -1) {
+                listofPatientsAll.push(allPatientIDs[i]);
             }
         }
-        listofPatients.push("All Patients");
+        listofPatientsAll.push("All Patients");
 
 
         function assignOptions(textArray, selector) {
@@ -50,8 +52,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             patientSelector3 = innerContainer3.querySelector('.patientdata3');
 
 
-        assignOptions(listofPatients, patientSelector1);
-        assignOptions(listofPatients, patientSelector2);
+        assignOptions(listofPatientsAll, patientSelector1);
+        assignOptions(listofPatientsAll, patientSelector2);
         assignOptions(listofPatients, patientSelector3);
 
         var trace1 = [];
