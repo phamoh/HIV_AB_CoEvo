@@ -155,7 +155,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
         function setBubblePlotHIV(chosenPatient) {
             getPatientDataHIV(chosenPatient);
-            var data = [];
+            var data = [trace1];
             var layout = {
                 title: 'HIV Diversity of Patient ' + chosenPatient,
                 titlefont: {
