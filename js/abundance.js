@@ -1,0 +1,200 @@
+Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patch-1/dataset_031519.csv",
+    function(err, rows) {
+
+        function unpack(rows, key) {
+            return rows.map(function(row) {
+                return row[key];
+            });
+        }
+
+        var allPatientIDs = unpack(rows, 'patient_id'),
+            allTimePoints = unpack(rows, 'time_point'),
+            allCD4Count = unpack(rows, 'CD4_count'),
+            allViralLoad = unpack(rows, 'viral_load'),
+            currentPatient,
+            listofPatients = [],
+            currentData = [],
+            currentTimePoint = [];
+
+        //This affects the dropdown menu
+        for (var i = 0; i < allPatientIDs.length; i++) {
+            if (listofPatients.indexOf(allPatientIDs[i]) === -1) {
+                listofPatients.push(allPatientIDs[i]);
+            }
+        }
+        listofPatients.push("All Patients");
+
+        function assignOptions(textArray, selector) {
+            for (var i = 0; i < textArray.length; i++) {
+                var currentOption = document.createElement('option');
+                currentOption.text = textArray[i];
+                selector.appendChild(currentOption);
+            }
+        };
+
+        // This code populates the info to the plots and the dropdowns.
+        //Dropdown9: CD4 count
+        var innerContainer9 = document.querySelector('[data-num9="0"]'),
+            patientSelector9 = innerContainer9.querySelector('.patientdata9'),
+            //Dropdown10: viral load
+            innerContainer10 = document.querySelector('[data-num10="0"]'),
+            patientSelector10 = innerContainer10.querySelector('.patientdata10');
+
+        assignOptions(listofPatients, patientSelector9);
+        assignOptions(listofPatients, patientSelector10);
+
+        var trace1 = [];
+        var trace2 = [];
+
+        function getPatientDataCD4Count(chosenPatient) {
+            currentCD4Count = [];
+            currentTimePoint = [];
+            trace1 = [];
+            for (var i = 0; i < allPatientIDs.length; i++) {
+                if (chosenPatient === 'All Patients') {
+                    trace1 = {
+                        type: 'scatter',
+                        mode: 'lines+markers',
+                        x: allTimePoints,
+                        y: allCD4Count,
+                        connectgaps: true,
+                        text: allPatientIDs,
+                        transforms: [{
+                            type: 'groupby',
+                            groups: allPatientIDs,
+                        }]
+                    }
+                } else if (allPatientIDs[i] === chosenPatient) {
+                    currentCD4Count.push(allCD4Count[i]);
+                    currentTimePoint.push(allTimePoints[i]);
+                    trace1 = {
+                        x: currentTimePoint,
+                        y: currentCD4Count,
+                        mode: 'lines+markers',
+                        type: 'scatter',
+                        connectgaps: true,
+                        line: {
+
+                            color: '#d62728'
+                        },
+                        marker: {
+                            size: 12,
+                            opacity: 0.5
+                        },
+                    }
+                }
+            }
+        };
+
+        function getPatientDataViralLoad(chosenPatient) {
+            currentViralLoad = [];
+            currentTimePoint = [];
+            trace1 = [];
+            for (var i = 0; i < allPatientIDs.length; i++) {
+                if (chosenPatient === 'All Patients') {
+                    trace1 = {
+                        type: 'scatter',
+                        mode: 'lines+markers',
+                        x: allTimePoints,
+                        y: allViralLoad,
+                        connectgaps: true,
+                        text: allPatientIDs,
+                        transforms: [{
+                            type: 'groupby',
+                            groups: allPatientIDs,
+                        }]
+                    }
+                } else if (allPatientIDs[i] === chosenPatient) {
+                    currentViralLoad.push(allViralLoad[i]);
+                    currentTimePoint.push(allTimePoints[i]);
+                    trace1 = {
+                        x: currentTimePoint,
+                        y: currentViralLoad,
+                        mode: 'lines+markers',
+                        type: 'scatter',
+                        connectgaps: true,
+                        line: {
+                            color: '#17becf',
+                        },
+                        marker: {
+                            size: 12,
+                            opacity: 0.5
+                        },
+                    }
+                }
+            }
+        };
+
+
+        setBubblePlotCD4Count("1");
+        setBubblePlotViralLoad("1");
+
+
+
+        function setBubblePlotCD4Count(chosenPatient) {
+            getPatientDataCD4Count(chosenPatient);
+            var data = [trace1];
+            var layout = {
+                title: 'CD4 Count of Patient ' + chosenPatient,
+                titlefont: {
+                    family: 'Poppins, sans-serif',
+                },
+                xaxis: {
+                    title: 'Estimated Time Since Infection (years)',
+                    titlefont: {
+                        family: 'Poppins, sans-serif',
+                    },
+                },
+                yaxis: {
+                    title: 'Diversity (pi)',
+                    titlefont: {
+                        family: 'Poppins, sans-serif',
+                    },
+                }
+            };
+            Plotly.newPlot('plotdiv9', data, layout, { showSendToCloud: true, responsive: true });
+        };
+
+        function setBubblePlotViralLoad(chosenPatient) {
+            getPatientDataViralLoad(chosenPatient);
+            var data = [trace1];
+            var layout = {
+                title: 'CD4 Count of Patient ' + chosenPatient,
+                titlefont: {
+                    family: 'Poppins, sans-serif',
+                },
+                xaxis: {
+                    title: 'Estimated Time Since Infection (years)',
+                    titlefont: {
+                        family: 'Poppins, sans-serif',
+                    },
+                },
+                yaxis: {
+                    title: 'Diversity (pi)',
+                    titlefont: {
+                        family: 'Poppins, sans-serif',
+                    },
+                }
+            };
+            Plotly.newPlot('plotdiv10', data, layout, { showSendToCloud: true, responsive: true });
+        };
+
+
+
+
+        function updatePatientCD4Count() {
+            setBubblePlotCD4Count(patientSelector9.value);
+        }
+
+        function updatePatientViralLoad() {
+            setBubblePlotViralLoad(patientSelector10.value);
+        }
+
+
+
+        patientSelector9.addEventListener('change', updatePatientCD4Count, false);
+        patientSelector10.addEventListener('change', updatePatientViralLoad, false);
+
+
+
+    });

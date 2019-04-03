@@ -32,7 +32,6 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
         }
         listofPatients.push("All Patients");
 
-
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {
                 var currentOption = document.createElement('option');

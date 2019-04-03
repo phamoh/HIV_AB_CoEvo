@@ -27,7 +27,7 @@
     <!--Plotly.js-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <script src="js/diversity.js"></script>
+
 
 </head>
 
@@ -117,7 +117,7 @@
             <!-- Inserting tabs (Diversity, Divergence, Selection ) -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" class=active>
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Diversity" role="tab" aria-controls="Diversity" aria-selected="true" id="defaultOpen"> Diversity <span class="caret"></span></a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Diversity" role="tab" aria-controls="Diversity" aria-selected="true"> Diversity <span class="caret"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Divergence" role="tab" aria-controls="Divergence" aria-selected="false"> Divergence <span class="caret"></span></a>
@@ -247,14 +247,20 @@
                         <h3>CD4 T cell count</h3>
                         <p>Measures the concentration of HIV virions in the peripheral blood of a sample.
                         </p>
-
+                        <div class="bubbleplot" data-num9="0">
+                            Patient: <select class="patientdata9"></select>
+                            <div id="plotdiv9"></div>
+                        </div>
                     </div>
 
                     <div id="viral_load" class="tabcontent">
                         <br>
                         <h3>Viral Load</h3>
                         <p>Measures the number of CD4 positive T cells in the peripheral blood of a sample.</p>
-
+                        <div class="bubbleplot" data-num10="0">
+                            Patient: <select class="patientdata10"></select>
+                            <div id="plotdiv10"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -298,7 +304,8 @@
                 </script>
 
 
-
+                <script src="js/diversity.js"></script>
+                <script src="js/abundance.js"></script>
 </body>
 
 </html>
