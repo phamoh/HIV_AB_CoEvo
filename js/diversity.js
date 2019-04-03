@@ -50,8 +50,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             patientSelector3 = innerContainer3.querySelector('.patientdata3');
 
 
-        assignOptions(listofPatientsAll, patientSelector1);
-        assignOptions(listofPatientsAll, patientSelector2);
+        assignOptions(listofPatients, patientSelector1);
+        assignOptions(listofPatients, patientSelector2);
         assignOptions(listofPatients, patientSelector3);
 
         var trace1 = [];
