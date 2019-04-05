@@ -207,7 +207,8 @@
                     <div class="tab-pane fade" id="Selection" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="tab">
                             <button class="tablinks" onclick="openStatistic(event, 'HIV_Selection')" id="defaultOpen">HIV Selection</button>
-                            <button class="tablinks" onclick="openStatistic(event, 'Antibody_Selection')">Antibody Selection</button>
+                            <button class="tablinks" onclick="openStatistic(event, 'Antibody_Selection_CDR')">AbR Selection CDR</button>
+                            <button class="tablinks" onclick="openStatistic(event, 'Antibody_Selection_FWR')">AbR Selection FWR</button>
                         </div>
 
                         <div id="HIV_Selection" class="tabcontent">
@@ -218,13 +219,21 @@
 
                         </div>
 
-                        <div id="Antibody_Selection" class="tabcontent">
+                        <div id="Antibody_Selection_CDR" class="tabcontent">
                             <br>
-                            <h3>Antibody Repertoire Selection </h3>
+                            <h3>Antibody Repertoire Selection in the CDR </h3>
                             <p>A measure of the amount of mutations that help a given sequence (or B cell) generate offspring. Estimated using
                                 <a href="http://selection.med.yale.edu/baseline/">BASELINe</a>. This compares the number of observed mutations in a sequence to the number of mutations that would be expected if there were no selection (i.e. neutrality).
                                 Values less than 0 indicate purifying selection, and values greater than 0 indicate positive selection.</p>
 
+                        </div>
+
+                        <div id="Antibody_Selection_FWR" class="tabcontent">
+                            <br>
+                            <h3>Antibody Repertoire Selection in the FWR </h3>
+                            <p>A measure of the amount of mutations that help a given sequence (or B cell) generate offspring. Estimated using
+                                <a href="http://selection.med.yale.edu/baseline/">BASELINe</a>. This compares the number of observed mutations in a sequence to the number of mutations that would be expected if there were no selection (i.e. neutrality).
+                                Values less than 0 indicate purifying selection, and values greater than 0 indicate positive selection.</p>
                         </div>
 
                         <div id="Antibody_Divergence " class="tabcontent ">

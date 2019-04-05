@@ -34,14 +34,14 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
 
         // This code populates the info to the plots and the dropdowns.
         //Dropdown9: CD4 count
-        var innerContainer9 = document.querySelector('[data-num9="0"]'),
-            patientSelector9 = innerContainer9.querySelector('.patientdata9'),
+        var innerContainer10 = document.querySelector('[data-num10="0"]'),
+            patientSelector10 = innerContainer10.querySelector('.patientdata10'),
             //Dropdown10: viral load
-            innerContainer10 = document.querySelector('[data-num10="0"]'),
-            patientSelector10 = innerContainer10.querySelector('.patientdata10');
+            innerContainer11 = document.querySelector('[data-num11="0"]'),
+            patientSelector11 = innerContainer11.querySelector('.patientdata11');
 
-        assignOptions(listofPatients, patientSelector9);
         assignOptions(listofPatients, patientSelector10);
+        assignOptions(listofPatients, patientSelector11);
 
         var trace1 = [];
         var trace2 = [];
@@ -152,7 +152,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 }
             };
-            Plotly.newPlot('plotdiv9', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv10', data, layout, { showSendToCloud: true, responsive: true });
         };
 
         function setBubblePlotViralLoad(chosenPatient) {
@@ -176,24 +176,24 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 }
             };
-            Plotly.newPlot('plotdiv10', data, layout, { showSendToCloud: true, responsive: true });
+            Plotly.newPlot('plotdiv11', data, layout, { showSendToCloud: true, responsive: true });
         };
 
 
 
 
         function updatePatientCD4Count() {
-            setBubblePlotCD4Count(patientSelector9.value);
+            setBubblePlotCD4Count(patientSelector10.value);
         }
 
         function updatePatientViralLoad() {
-            setBubblePlotViralLoad(patientSelector10.value);
+            setBubblePlotViralLoad(patientSelector11.value);
         }
 
 
 
-        patientSelector9.addEventListener('change', updatePatientCD4Count, false);
-        patientSelector10.addEventListener('change', updatePatientViralLoad, false);
+        patientSelector10.addEventListener('change', updatePatientCD4Count, false);
+        patientSelector11.addEventListener('change', updatePatientViralLoad, false);
 
 
 

@@ -21,6 +21,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             allHIVSelection = unpack(rows, 'hiv_selection_dN_dS'),
             currentPatient,
             listofPatients = [],
+            listofPatientsALL = [],
             currentData = [],
             currentTimePoint = [];
 
@@ -30,7 +31,13 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                 listofPatients.push(allPatientIDs[i]);
             }
         }
-        listofPatients.push("All Patients");
+
+        for (var i = 0; i < allPatientIDs.length; i++) {
+            if (listofPatientsALL.indexOf(allPatientIDs[i]) === -1) {
+                listofPatientsALL.push(allPatientIDs[i]);
+            }
+        }
+        listofPatientsALL.push("All Patients");
 
         function assignOptions(textArray, selector) {
             for (var i = 0; i < textArray.length; i++) {
@@ -49,8 +56,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             patientSelector3 = innerContainer3.querySelector('.patientdata3');
 
 
-        assignOptions(listofPatients, patientSelector1);
-        assignOptions(listofPatients, patientSelector2);
+        assignOptions(listofPatientsALL, patientSelector1);
+        assignOptions(listofPatientsALL, patientSelector2);
         assignOptions(listofPatients, patientSelector3);
 
         var trace1 = [];
