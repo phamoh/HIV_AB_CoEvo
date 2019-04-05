@@ -289,8 +289,8 @@ ul {
 
 .small-logo {
     opacity: 1;
-    float: left;
-    width: 40px;
+    float: top;
+    width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -329,6 +329,7 @@ h2 {
 
 .tab button {
     background-color: inherit;
+    font-family: 'Poppins', sans-serif;
     float: left;
     border: none;
     outline: none;
@@ -356,6 +357,7 @@ h2 {
 /* Style the tab content */
 
 .tabcontent {
+    font-family: 'Poppins', sans-serif;
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
