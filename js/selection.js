@@ -206,7 +206,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             getPatientDataABCDR(chosenPatient);
             var data = [trace1];
             var layout = {
-                title: 'AbR Selection in the CDR of Patient: ' + chosenPatient,
+                title: 'AbR Selection in the CDR of Patient ' + chosenPatient,
                 titlefont: {
                     family: 'Poppins, sans-serif',
                 },
@@ -217,7 +217,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'Selection',
+                    title: 'concentration of HIV virions',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },
