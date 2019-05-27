@@ -174,7 +174,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'Diversity (pi)',
+                    title: 'Diversity (π)',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },
@@ -198,7 +198,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'Diversity (pi)',
+                    title: 'Diversity (π)',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },
@@ -255,7 +255,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'Diversity (pi)',
+                    title: 'Diversity (π)',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },

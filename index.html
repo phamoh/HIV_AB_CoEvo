@@ -27,6 +27,12 @@
     <!--Plotly.js-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+    <script src="js/diversity.js"></script>
+    <script src="js/divergence.js"></script>
+    <script src="js/abundance.js"></script>
+    <script src="js/selection.js"></script>
+
+
 
 </head>
 
@@ -205,7 +211,9 @@
                     <div class="tab-pane fade" id="Selection">
                         <ul class="nav" style="background-color:#f5f5f5; border:1px solid #dddddd;" id="selection_tabs">
                             <a href="#HIV_Selection" class="nav-link" data-toggle="tab">HIV Selection</a>
-                            <a href="#Antibody_Selection" class="nav-link" data-toggle="tab">Antibody Selection</a>
+                            <a href="#Antibody_Selection_CDR" class="nav-link" data-toggle="tab">Antibody Selection CDR</a>
+                            <a href="#Antibody_Selection_FWR" class="nav-link" data-toggle="tab">Antibody Selection FWR</a>
+
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="HIV_Selection">
@@ -220,7 +228,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="Antibody_Selection">
+                            <div class="tab-pane fade" id="Antibody_Selection_CDR">
                                 <br>
                                 <h3>Antibody Repertoire Selection </h3>
                                 <p>A measure of the amount of mutations that help a given sequence (or B cell) generate offspring. Estimated using
@@ -230,6 +238,19 @@
                                 <div class="bubbleplot" data-num8="0">
                                     Patient: <select class="patientdata8"></select>
                                     <div id="plotdiv8"></div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="Antibody_Selection_FWR">
+                                <br>
+                                <h3>Antibody Repertoire Selection </h3>
+                                <p>A measure of the amount of mutations that help a given sequence (or B cell) generate offspring. Estimated using
+                                    <a href="http://selection.med.yale.edu/baseline/ ">BASELINe</a>. This compares the number of observed mutations in a sequence to the number of mutations that would be expected if there were no selection (i.e. neutrality).
+                                    Values less than 0 indicate purifying selection, and values greater than 0 indicate positive selection.
+                                </p>
+                                <div class="bubbleplot" data-num9="0">
+                                    Patient: <select class="patientdata9"></select>
+                                    <div id="plotdiv9"></div>
                                 </div>
                             </div>
                         </div>
@@ -247,18 +268,18 @@
                                 <h3>CD4 T cell count</h3>
                                 <p>Measures the concentration of HIV virions in the peripheral blood of a sample.
                                 </p>
-                                <div class="bubbleplot" data-num9="0">
-                                    Patient: <select class="patientdata9"></select>
-                                    <div id="plotdiv9"></div>
+                                <div class="bubbleplot" data-num10="0">
+                                    Patient: <select class="patientdata10"></select>
+                                    <div id="plotdiv10"></div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="viral_load">
                                 <br>
                                 <h3>Viral Load</h3>
                                 <p>Measures the number of CD4 positive T cells in the peripheral blood of a sample.</p>
-                                <div class="bubbleplot" data-num10="0">
-                                    Patient: <select class="patientdata10"></select>
-                                    <div id="plotdiv10"></div>
+                                <div class="bubbleplot" data-num11="0">
+                                    Patient: <select class="patientdata11"></select>
+                                    <div id="plotdiv11"></div>
                                 </div>
                             </div>
                         </div>
@@ -297,10 +318,7 @@
         });
     </script>
 
-    <script src="js/diversity.js"></script>
-    <script src="js/divergence.js"></script>
-    <script src="js/abundance.js"></script>
-    <script src="js/selection.js"></script>
+
 
 
 

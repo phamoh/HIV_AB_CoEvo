@@ -217,7 +217,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'concentration of HIV virions',
+                    title: 'mean Σ CDR',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },
@@ -241,7 +241,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
                     },
                 },
                 yaxis: {
-                    title: 'Selection',
+                    title: 'mean Σ FWR',
                     titlefont: {
                         family: 'Poppins, sans-serif',
                     },
