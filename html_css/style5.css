@@ -40,6 +40,10 @@ a:focus {
     border: none;
 }
 
+.navbar-brand {
+    font-weight: 500;
+}
+
 .line {
     width: 100%;
     height: 1px;
@@ -48,7 +52,24 @@ a:focus {
 }
 
 .nav-link {
-    padding: 15px 25px 10px 25px;
+    padding: 15px 25px 15px 25px;
+}
+
+.nav-inner {
+    background-color: #f5f5f5;
+    border: 1px solid #dddddd;
+}
+
+a.nav-link-inner:hover {
+    background: inherit;
+    color: #81A3A7;
+    font-weight: 600;
+}
+
+a.nav-link-inner.active {
+    background: inherit;
+    color: #81A3A7;
+    font-weight: 600;
 }
 
 
@@ -101,17 +122,16 @@ a:focus {
     display: block;
 }
 
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #81A3A7;
+    border-radius: 10px;
+}
+
 #sidebar ul li a:hover {
     color: #81A3A7;
     background: #C2D3DA;
     border-radius: 15px;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #C2D3DA;
-    border-radius: 10px;
 }
 
 a[data-toggle="collapse"] {
@@ -144,8 +164,8 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download,
-a.download:hover {
+a.github,
+a.github:hover {
     background: #fff;
     color: #81A3A7;
     border: 1px lightgrey solid;
@@ -349,38 +369,28 @@ h3 {
 }
 
 
-/* Change background color of buttons on hover */
-
-.tab button:hover {
-    background-color: #33ccff;
-}
-
-
-/* Create an active/current tablink class */
-
-.tab button.active {
-    background-color: #ccc;
-}
-
-
 /* Style the tab content */
 
 .tabcontent {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-top: none;
 }
 
-.tablinks {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
+a.inner-tab,
+a.inner-tab:hover {
+    background: #f5f5f5;
+    color: #81A3A7;
+    border: 1px lightgrey solid;
     cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin: 10px 20px 0px 0px;
     padding: 14px 16px;
     transition: 0.3s;
-    border-radius: 15px;
 }
 
 
@@ -426,4 +436,10 @@ tr:nth-child(even) {
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     border-radius: 0px 0px 5px 5px;
+}
+
+.divider {
+    margin: 10px 20px 0px 0px;
+    padding: 5px 16px;
+    font-size: 1.0em;
 }

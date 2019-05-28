@@ -27,10 +27,7 @@
     <!--Plotly.js-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-    <script src="js/diversity.js"></script>
-    <script src="js/divergence.js"></script>
-    <script src="js/abundance.js"></script>
-    <script src="js/selection.js"></script>
+
 
 
 
@@ -74,7 +71,7 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://github.com/efryer333/HIV_AB_CoEvo" class="download">Github</a>
+                    <a href="https://github.com/efryer333/HIV_AB_CoEvo" class="github">Github</a>
                 </li>
                 <li>
                     <a href="#" class="article">Back to article</a>
@@ -119,21 +116,21 @@
             <div class="bordered-tab-contents">
                 <ul class="nav nav-tabs" id="statsTab">
                     <!--top level tabs-->
-                    <li class="active"><a href="#Diversity" class="navbar-brand" data-toggle="tab">Diversity<span
-                    class="caret"></span></a></li>
-                    <li><a href="#Divergence" class="navbar-brand" data-toggle="tab">Divergence<span class="caret"></span></a></li>
-                    <li><a href="#Selection" class="navbar-brand" data-toggle="tab">Selection<span class="caret"></span></a></li>
-                    <li><a href="#Abundance" class="navbar-brand" data-toggle="tab">Abundance<span class="caret"></span></a></li>
+                    <li class="active"><a href="#Diversity" class="navbar-brand" data-toggle="tab">Diversity <span class="caret"></span></a></li>
+                    <li><a href="#Divergence" class="navbar-brand" data-toggle="tab">Divergence <span class="caret"></span></a></li>
+                    <li><a href="#Selection" class="navbar-brand" data-toggle="tab">Selection <span class="caret"></span></a></li>
+                    <li><a href="#Abundance" class="navbar-brand" data-toggle="tab">Abundance <span class="caret"></span></a></li>
                 </ul>
 
                 <div class="tab-content" id="myTabContent">
                     <!--diversity tab menu-->
                     <div class="tab-pane fade in active" id="Diversity">
-                        <ul class="nav" style="background-color:#f5f5f5; border:1px solid #dddddd;" id="diversity_tabs">
-                            <a href="#HIV_Diversity" class="nav-link" data-toggle="tab">HIV Diversity</a>
-                            <a href="#Antibody_Diversity" class="nav-link" data-toggle="tab">Antibody Diversity</a>
-                            <a href="#Both_Diversity" class="nav-link" data-toggle="tab">HIV+Antibody Diversity</a>
+                        <ul class="nav nav-inner" id="diversity_tabs">
+                            <a href="#HIV_Diversity" class="nav-link nav-link-inner active" data-toggle="tab">HIV Diversity</a><span class="divider">|</span>
+                            <a href="#Antibody_Diversity" class="nav-link nav-link-inner" data-toggle="tab">Antibody Diversity</a><span class="divider">|</span>
+                            <a href="#Both_Diversity" class="nav-link nav-link-inner" data-toggle="tab">HIV+Antibody Diversity</a>
                         </ul>
+
 
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="HIV_Diversity">
@@ -170,10 +167,10 @@
 
                     <!--divergence tab menu-->
                     <div class="tab-pane fade" id="Divergence">
-                        <ul class="nav" style="background-color:#f5f5f5; border:1px solid #dddddd;" id="divergence_tabs">
-                            <a href="#HIV_Non_Syn" class="nav-link" data-toggle="tab">HIV Non-Synonymous</a>
-                            <a href="#HIV_Syn" class="nav-link" data-toggle="tab">HIV Synonymous</a>
-                            <a href="#Antibody_Divergence" class="nav-link" data-toggle="tab">Antibody</a>
+                        <ul class="nav nav-inner" id="divergence_tabs">
+                            <a href="#HIV_Non_Syn" class="nav-link nav-link-inner active" data-toggle="tab">HIV Non-Synonymous</a><span class="divider">|</span>
+                            <a href="#HIV_Syn" class="nav-link nav-link-inner" data-toggle="tab">HIV Synonymous</a><span class="divider">|</span>
+                            <a href="#Antibody_Divergence" class="nav-link nav-link-inner" data-toggle="tab">Antibody</a>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="HIV_Non_Syn">
@@ -213,10 +210,10 @@
 
                     <!--selection tab menu-->
                     <div class="tab-pane fade" id="Selection">
-                        <ul class="nav" style="background-color:#f5f5f5; border:1px solid #dddddd;" id="selection_tabs">
-                            <a href="#HIV_Selection" class="nav-link" data-toggle="tab">HIV Selection</a>
-                            <a href="#Antibody_Selection_CDR" class="nav-link" data-toggle="tab">Antibody Selection CDR</a>
-                            <a href="#Antibody_Selection_FWR" class="nav-link" data-toggle="tab">Antibody Selection FWR</a>
+                        <ul class="nav nav-inner" id="selection_tabs">
+                            <a href="#HIV_Selection" class="nav-link nav-link-inner active" data-toggle="tab">HIV Selection</a><span class="divider">|</span>
+                            <a href="#Antibody_Selection_CDR" class="nav-link nav-link-inner" data-toggle="tab">Antibody Selection CDR</a><span class="divider">|</span>
+                            <a href="#Antibody_Selection_FWR" class="nav-link nav-link-inner" data-toggle="tab">Antibody Selection FWR</a>
 
                         </ul>
                         <div class="tab-content">
@@ -262,9 +259,9 @@
 
                     <!--abundance tab menu-->
                     <div class="tab-pane fade" id="Abundance">
-                        <ul class="nav" style="background-color:#f5f5f5; border:1px solid #dddddd;" id="abundance_tabs">
-                            <a href="#CD4count" class="nav-link" data-toggle="tab">CD4 T cell count</a>
-                            <a href="#viral_load" class="nav-link" data-toggle="tab">Viral Load</a>
+                        <ul class="nav nav-inner" id="abundance_tabs">
+                            <a href="#CD4count" class="nav-link nav-link-inner active" data-toggle="tab">CD4 T cell count</a><span class="divider">|</span>
+                            <a href="#viral_load" class="nav-link nav-link-inner" data-toggle="tab">Viral Load</a>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="CD4count">
@@ -322,6 +319,10 @@
         });
     </script>
 
+    <script src="js/diversity.js"></script>
+    <script src="js/divergence.js"></script>
+    <script src="js/abundance.js"></script>
+    <script src="js/selection.js"></script>
 
 
 
