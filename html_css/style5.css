@@ -227,6 +227,11 @@ a.article:hover {
     margin: 5px auto;
 }
 
+
+/* ---------------------------------------------------
+    People Page
+----------------------------------------------------- */
+
 #photo {
     padding-right: 5px;
 }
@@ -371,20 +376,29 @@ h3 {
     color: #FFFFFF;
 }
 
-a.inner-tab,
-a.inner-tab:hover {
-    background: #f5f5f5;
-    color: #81A3A7;
-    border: 1px lightgrey solid;
-    cursor: pointer;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
+
+/*   Creating Borders for the main Tabs     */
+
+.bordered-tab-contents>.tab-content>.tab-pane {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+}
+
+.bordered-tab-contents>.nav-link {
+    margin-bottom: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.divider {
     margin: 10px 20px 0px 0px;
-    padding: 14px 16px;
-    transition: 0.3s;
+    padding: 5px 16px;
+    font-size: 1.0em;
 }
 
 
@@ -409,31 +423,4 @@ th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
-}
-
-
-/* ---------------------------------------------------
-    Tabs within tabs
------------------------------------------------------ */
-
-.bordered-tab-contents>.tab-content>.tab-pane {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0px 0px 5px 5px;
-    padding: 10px;
-}
-
-.bordered-tab-contents>.nav-link {
-    margin-bottom: 0;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0px 0px 5px 5px;
-}
-
-.divider {
-    margin: 10px 20px 0px 0px;
-    padding: 5px 16px;
-    font-size: 1.0em;
 }
