@@ -424,3 +424,14 @@ th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+a.dl-btn,
+a.dl-btn:hover {
+    background: #fff;
+    color: #81A3A7;
+    border: 1px lightgrey solid;
+    border-radius: 10px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
