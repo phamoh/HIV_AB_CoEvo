@@ -159,7 +159,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/phamoh/HIV_AB_CoEvo/phamoh-patc
             getPatientDataViralLoad(chosenPatient);
             var data = [trace1];
             var layout = {
-                title: 'CD4 Count of Patient ' + chosenPatient,
+                title: 'Viral Load of Patient ' + chosenPatient,
                 titlefont: {
                     family: 'Poppins, sans-serif',
                 },
